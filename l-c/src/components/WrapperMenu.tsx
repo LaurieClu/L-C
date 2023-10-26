@@ -8,9 +8,17 @@ export const WrapperMenu = styled.div`
     text-align: center;
     align-content: space-between;
     flex-direction: column;
+    background-color: #C9156B;
 `;
 
 export const Logo = styled.div`
-    height: 10%;
-    background-color: blue;
+    height: 20%;
+    background-color: #C9156B;
+`;
+
+export const LogoTitle = styled.p`
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 10%;
 `;

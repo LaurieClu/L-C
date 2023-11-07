@@ -22,3 +22,18 @@ export const LogoTitle = styled.p`
     font-size: 18px;
     padding-top: 10%;
 `;
+
+export const WrapperContainer = styled.div`
+position: absolute;
+top: 50%;
+left: 50%;
+margin-top: -50px;
+margin-left: -50px;
+width: 100px;
+height: 100px;
+`;
+
+export const WrapperGlobal = styled.div`
+    display: flex;
+    flex-direction: row;
+`;

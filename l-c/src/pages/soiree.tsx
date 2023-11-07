@@ -2,12 +2,13 @@ import * as React from "react";
 import { Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { WrapperContainer, Date } from "../styles/Soiree";
+import { CloseOutlined } from "@ant-design/icons";
 
 export interface DataType {
     key: string;
     name: string;
-    statut: number;
-    paiement: string;
+    statut:  string[];
+    paiement: string[];
     annulation: string[];
 }
 
@@ -21,11 +22,41 @@ export const columns: ColumnsType<DataType> = [
         title: 'Statut',
         dataIndex: 'statut',
         key: 'statut',
+        render: (_, { statut }) => (
+            <>
+                {statut.map((statut) => {
+                    let color = statut.length > 7 ? 'blue' : 'purple';
+                    if (statut === 'Inactif') {
+                        color = 'volcano';
+                    }
+                    return (
+                        <Tag color={color} key={statut}>
+                            {statut.toUpperCase()}
+                        </Tag>
+                    );
+                })}
+            </>
+        ),
     },
     {
         title: 'Paiement',
         dataIndex: 'paiement',
         key: 'paiement',
+        render: (_, { paiement }) => (
+            <>
+                {paiement.map((paiement) => {
+                    let color = paiement.length > 5 ? 'green' : 'green';
+                    if (paiement === 'En attente') {
+                        color = 'volcano';
+                    }
+                    return (
+                        <Tag color={color} key={paiement}>
+                            {paiement.toUpperCase()}
+                        </Tag>
+                    );
+                })}
+            </>
+        ),
     },
     {
         title: 'Annulation',
@@ -33,17 +64,7 @@ export const columns: ColumnsType<DataType> = [
         dataIndex: 'annulation',
         render: (_, { annulation }) => (
             <>
-                {annulation.map((annulation) => {
-                    let color = annulation.length > 5 ? 'geekblue' : 'green';
-                    if (annulation === 'loser') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={annulation}>
-                            {annulation.toUpperCase()}
-                        </Tag>
-                    );
-                })}
+                <CloseOutlined />
             </>
         ),
     },
@@ -53,22 +74,50 @@ export const data: DataType[] = [
     {
         key: '1',
         name: 'John Brown',
-        statut: 32,
-        paiement: 'New York No. 1 Lake Park',
+        statut: ['Habitué.e'],
+        paiement: ['A payé'],
         annulation: ['nice', 'developer'],
     },
     {
         key: '2',
         name: 'Jim Green',
-        statut: 42,
-        paiement: 'London No. 1 Lake Park',
+        statut:['Inactif'],
+        paiement: ['En attente'],
         annulation: ['loser'],
     },
     {
         key: '3',
         name: 'Joe Black',
-        statut: 32,
-        paiement: 'Sydney No. 1 Lake Park',
+        statut: ['Nouveau'],
+        paiement: ['En attente'],
+        annulation: ['cool', 'teacher'],
+    },
+    {
+        key: '3',
+        name: 'Joe Black',
+        statut: ['Nouveau'],
+        paiement: ['En attente'],
+        annulation: ['cool', 'teacher'],
+    },
+    {
+        key: '3',
+        name: 'Joe Black',
+        statut: ['Nouveau'],
+        paiement: ['En attente'],
+        annulation: ['cool', 'teacher'],
+    },
+    {
+        key: '3',
+        name: 'Joe Black',
+        statut: ['Nouveau'],
+        paiement: ['En attente'],
+        annulation: ['cool', 'teacher'],
+    },
+    {
+        key: '3',
+        name: 'Joe Black',
+        statut: ['Nouveau'],
+        paiement: ['En attente'],
         annulation: ['cool', 'teacher'],
     },
 ];

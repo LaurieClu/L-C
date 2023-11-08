@@ -3,14 +3,8 @@ import { Table, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { WrapperContainer, Date } from "../styles/Soiree";
 import { CloseOutlined } from "@ant-design/icons";
+import { DataType, data } from "../data/soireeData";
 
-export interface DataType {
-    key: string;
-    name: string;
-    statut:  string[];
-    paiement: string[];
-    annulation: string[];
-}
 
 export const columns: ColumnsType<DataType> = [
     {
@@ -70,57 +64,7 @@ export const columns: ColumnsType<DataType> = [
     },
 ];
 
-export const data: DataType[] = [
-    {
-        key: '1',
-        name: 'John Brown',
-        statut: ['Habitué.e'],
-        paiement: ['A payé'],
-        annulation: ['nice', 'developer'],
-    },
-    {
-        key: '2',
-        name: 'Jim Green',
-        statut:['Inactif'],
-        paiement: ['En attente'],
-        annulation: ['loser'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        statut: ['Nouveau'],
-        paiement: ['En attente'],
-        annulation: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        statut: ['Nouveau'],
-        paiement: ['En attente'],
-        annulation: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        statut: ['Nouveau'],
-        paiement: ['En attente'],
-        annulation: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        statut: ['Nouveau'],
-        paiement: ['En attente'],
-        annulation: ['cool', 'teacher'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        statut: ['Nouveau'],
-        paiement: ['En attente'],
-        annulation: ['cool', 'teacher'],
-    },
-];
+
 
 const Soiree = () => {
     return (

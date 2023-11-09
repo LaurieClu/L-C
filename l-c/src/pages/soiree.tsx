@@ -1,10 +1,31 @@
 import * as React from "react";
+import { useState } from "react";
 import { Table, Tag } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
+import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import { WrapperContainer, Date } from "../styles/Soiree";
-import { CloseOutlined } from "@ant-design/icons";
+import { Checkbox } from 'antd';
+import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import { DataType, data } from "../data/soireeData";
 
+const onChange = (e: CheckboxChangeEvent) => {
+    console.log(`checked = ${e.target.checked}`);
+  };
+
+const rowSelection = {
+  onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
+    console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  },
+  getCheckboxProps: (data: DataType) => ({
+    disabled: data.name === 'Disabled User', // Column configuration not to be checked
+    annulation: data.annulation,
+  }),
+};
+
+// type TablePaginationPosition = NonNullable<TablePaginationConfig['position']>[number];
+
+// const bottomOptions = [
+//     { label: 'bottomCenter', value: 'bottomCenter' }
+//   ];
 
 export const columns: ColumnsType<DataType> = [
     {
@@ -52,13 +73,14 @@ export const columns: ColumnsType<DataType> = [
             </>
         ),
     },
+    Table.SELECTION_COLUMN,
     {
         title: 'Annulation',
         key: 'annulation',
         dataIndex: 'annulation',
         render: (_, { annulation }) => (
             <>
-                <CloseOutlined />
+            
             </>
         ),
     },
@@ -67,10 +89,16 @@ export const columns: ColumnsType<DataType> = [
 
 
 const Soiree = () => {
+    // const [bottom, setBottom] = useState<TablePaginationPosition>('bottomLeft');
+
     return (
         <WrapperContainer>
             {/* <Date>{setDate}</Date> */}
-            <Table columns={columns} dataSource={data} />
+            <Table 
+            rowSelection={{}}
+            columns={columns} 
+            // pagination={{ position: [bottom] }} 
+            dataSource={data} />
         </WrapperContainer>
     );
 }

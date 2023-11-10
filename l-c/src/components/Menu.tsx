@@ -1,13 +1,12 @@
 import * as React from "react";
 import { MenuData } from "../data/menuData";
 import { NavLink } from 'react-router-dom';
-import { WrapperMenu, Logo, LogoTitle, WrapperGlobal, List, WrapperLink } from "./WrapperMenu";
+import { WrapperMenu, Logo, LogoTitle, List, WrapperLink } from "../styles/WrapperMenu";
 
 export const Menu = () => {
 
     return (
         <div>
-            <WrapperGlobal>
                 <WrapperMenu>
                 <Logo>
                     <LogoTitle> Licornes & Clémentines</LogoTitle>
@@ -47,7 +46,6 @@ export const Menu = () => {
                         )
                     })}
                 </WrapperMenu>
-            </WrapperGlobal>
         </div>
     )
 }

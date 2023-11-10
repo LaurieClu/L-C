@@ -2,10 +2,11 @@ import * as React from "react";
 import { useState } from "react";
 import { Table, Tag } from 'antd';
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
-import { WrapperContainer, Date } from "../styles/Soiree";
+import { TableContainer, Date } from "../styles/Soiree";
 import { Checkbox } from 'antd';
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 import { DataType, data } from "../data/soireeData";
+import { WrapperPage } from "../styles/GlobalPage";
 
 const onChange = (e: CheckboxChangeEvent) => {
     console.log(`checked = ${e.target.checked}`);
@@ -92,14 +93,16 @@ const Soiree = () => {
     // const [bottom, setBottom] = useState<TablePaginationPosition>('bottomLeft');
 
     return (
-        <WrapperContainer>
-            {/* <Date>{setDate}</Date> */}
-            <Table 
-            rowSelection={{}}
-            columns={columns} 
-            // pagination={{ position: [bottom] }} 
-            dataSource={data} />
-        </WrapperContainer>
+        <WrapperPage>
+            <TableContainer>
+                {/* <Date>{setDate}</Date> */}
+                <Table 
+                rowSelection={{}}
+                columns={columns} 
+                // pagination={{ position: [bottom] }} 
+                dataSource={data} />
+            </TableContainer>
+        </WrapperPage>
     );
 }
 

@@ -1,10 +1,11 @@
 import styled  from "styled-components";
 
 export const TableContainer = styled.div`
-// background-color: red;
+background-color: #d9bfcb;
 margin:10%;
-width: 500px;
-height: 500px;
+padding-right: 10px;
+padding-top: 10px;
+border-radius: 2%;
 `;
 
 export const Date = styled.div`

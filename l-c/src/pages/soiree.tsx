@@ -3,8 +3,7 @@ import { useState } from "react";
 import { Table, Tag } from 'antd';
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import { TableContainer, Date } from "../styles/Soiree";
-import { Checkbox } from 'antd';
-import type { CheckboxChangeEvent } from 'antd/es/checkbox';
+import { Airbnb } from "../components/Airbnb"
 import { DataType, data } from "../data/soireeData";
 import { WrapperPage } from "../styles/GlobalPage";
 
@@ -86,6 +85,7 @@ const Soiree = () => {
                 pagination={{ position: [bottom] }} 
                 dataSource={data} />
             </TableContainer>
+            <Airbnb/>
         </WrapperPage>
     );
 }

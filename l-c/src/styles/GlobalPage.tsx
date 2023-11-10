@@ -14,6 +14,13 @@ export const WrapperPage = styled.div`
     align-items: center;
     width: 200vh;
 	height: 100vh;
-    // background-color: blue;
+    background-color: #FAF7F9;
 
 `;
+
+// export const CardWrapper = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     background-color: green; 
+// `;

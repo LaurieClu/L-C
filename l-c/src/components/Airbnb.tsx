@@ -14,7 +14,7 @@ export const Airbnb= () =>{
     const [adress, setAdress] = useState (() => {
          // getting stored value
         const saved = localStorage.getItem("adress");
-        return saved || "Entrer adresse";
+        return saved || "";
     });
 
 

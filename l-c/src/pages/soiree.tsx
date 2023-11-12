@@ -1,17 +1,37 @@
 import * as React from "react";
 import { useState } from "react";
-import { Table, Tag } from 'antd';
+import { Select, Table, Tag } from 'antd';
 import type { ColumnsType, TablePaginationConfig } from 'antd/es/table';
 import { TableContainer, Date } from "../styles/Soiree";
 import { Airbnb } from "../components/Airbnb"
 import { DataType, data } from "../data/soireeData";
-import { WrapperPage } from "../styles/GlobalPage";
+import { CardWrapper, WrapperPage } from "../styles/GlobalPage";
+import type { CustomTagProps } from 'rc-select/lib/BaseSelect';
+import { NbPlaces } from "../components/NbPlaces";
+import { PaiementTag } from "../components/PaiementTag";
+
 
 
 type TablePaginationPosition = NonNullable<TablePaginationConfig['position']>[number];
 
 
+// const tagRender = (props: CustomTagProps) => {
+//   const { label, value } = props;
+  
+//   return (
+//     <Tag
+//       color={value}
+//       style={{ marginRight: 3 }}
+//     >
+//       {label}
+//     </Tag>
+//   );
+// };
+
+
+
 export const columns: ColumnsType<DataType> = [
+    
     {
         title: 'Prénom',
         dataIndex: 'name',
@@ -41,21 +61,31 @@ export const columns: ColumnsType<DataType> = [
         title: 'Paiement',
         dataIndex: 'paiement',
         key: 'paiement',
-        render: (_, { paiement }) => (
-            <>
-                {paiement.map((paiement) => {
-                    let color = paiement.length > 5 ? 'green' : 'green';
-                    if (paiement === 'En attente') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={paiement}>
-                            {paiement.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
+        render: (_, {  }) => (
+//             <>
+//                 {paiement.map((paiement) => {
+//                     let color = paiement.length > 5 ? 'green' : 'green';
+//                     if (paiement === 'En attente') {
+//                         color = 'volcano';
+//                     }
+//                     return (
+//                         <Select
+//                             mode="multiple"
+//                             tagRender={tagRender}
+//                             defaultValue= {'volcano'}
+//                             style={{ width: 100 }}
+//                             options={[
+//                                 { value: 'green', label: 'A payé' },
+//                                 { value: 'volcano', label: 'En attente' },
+                                
+// ]}>
+                        
+//                          </Select> 
+                        <PaiementTag></PaiementTag>
+                    )
+                // })}
+            // </>
+        // ),
     },
     Table.SELECTION_COLUMN,
     {
@@ -85,7 +115,10 @@ const Soiree = () => {
                 pagination={{ position: [bottom] }} 
                 dataSource={data} />
             </TableContainer>
-            <Airbnb/>
+            <CardWrapper>
+                <Airbnb/>
+                <NbPlaces/>
+            </CardWrapper>
         </WrapperPage>
     );
 }

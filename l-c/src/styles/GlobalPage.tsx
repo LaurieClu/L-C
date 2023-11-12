@@ -18,9 +18,12 @@ export const WrapperPage = styled.div`
 
 `;
 
-// export const CardWrapper = styled.div`
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     background-color: green; 
-// `;
+export const CardWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50vh;
+    height: 70vh;
+    //background-color: green; 
+`;

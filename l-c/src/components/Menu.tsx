@@ -1,14 +1,23 @@
 import * as React from "react";
+<<<<<<< HEAD
 import { useState } from "react";
 import { MenuData } from "../data/menuData";
 import { NavLink } from 'react-router-dom';
 import { WrapperMenu, Logo, LogoTitle, WrapperGlobal, List, WrapperLink } from "./WrapperMenu";
+=======
+import { MenuData } from "../data/menuData";
+import { NavLink } from 'react-router-dom';
+import { WrapperMenu, Logo, LogoTitle, List, WrapperLink } from "../styles/WrapperMenu";
+>>>>>>> soiree
 
 export const Menu = () => {
 
     return (
         <div>
+<<<<<<< HEAD
             <WrapperGlobal>
+=======
+>>>>>>> soiree
                 <WrapperMenu>
                 <Logo>
                     <LogoTitle> Licornes & Clémentines</LogoTitle>
@@ -48,7 +57,10 @@ export const Menu = () => {
                         )
                     })}
                 </WrapperMenu>
+<<<<<<< HEAD
             </WrapperGlobal>
+=======
+>>>>>>> soiree
         </div>
     )
 }

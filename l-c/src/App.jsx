@@ -9,11 +9,19 @@ import Courses from './pages/courses';
 import Inventaire from './pages/inventaire';
 import Messages from './pages/messages';
 import Utiles from './pages/utiles';
+<<<<<<< HEAD
+=======
+import { WrapperGlobal } from "./styles/GlobalPage";
+>>>>>>> soiree
 
 function App() {
   return (
     <div className="App">
       <Router>
+<<<<<<< HEAD
+=======
+        <WrapperGlobal>
+>>>>>>> soiree
         <Menu />
         <Routes>
           <Route path="/" element={<Soiree />} />
@@ -25,6 +33,10 @@ function App() {
           <Route path='/budget'  element={<Budget />}></Route>
           <Route path='/utiles'  element={<Utiles />}></Route>
         </Routes>
+<<<<<<< HEAD
+=======
+        </WrapperGlobal>
+>>>>>>> soiree
       </Router>
     </div>
   );

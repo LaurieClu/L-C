@@ -54,13 +54,6 @@ export const Membres = () => {
         }))
 
     return (
-        <div >
-            {/* {membres.map((membre) => (
-            <li key={membre._id}> {membre.name} 
-            </li>      
-            ))} */}
-            
-            <Table columns={columns} dataSource={data}></Table>
-        </div>
+        <Table columns={columns} dataSource={data}></Table>
     )
 }

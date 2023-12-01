@@ -1,8 +1,9 @@
 import * as React from "react";
+import { Membres } from "../components/Membres";
 
 const membres = () => {
     return (
-        <div>membres</div>
+        <Membres/>
     )
 }
 
